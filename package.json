@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*.html,**/*.cs'"
-
+    "start": "browser-sync start --server --serveStatic 'docs' --files '**/*.html,**/*.cs'",
+    "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/style.css",
+    "tailwind:watch": "npm run tailwind -- --watch"
   },
   "repository": {
     "type": "git",
@@ -19,6 +20,7 @@
   },
   "homepage": "https://github.com/ucudal/PW_2021_Website-AleEtchevers#readme",
   "dependencies": {
+    "@tailwindcss/typography": "^0.4.1",
     "browser-sync": "^2.27.5"
   }
 }
