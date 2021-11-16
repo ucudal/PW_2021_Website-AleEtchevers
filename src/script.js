@@ -48,20 +48,29 @@ function toggleModal() {
 }
 
 function sendContact() {
-    let contacto = {
-        nombre: inputNombre.value,
-        email: inputEmail.value,
-        telefono: inputTelefono.value,
-        mensaje: inputMensaje.value
-    }
 
-    alert(`Gracias por tu contacto, ${contacto.nombre}. Me comunicaré pronto!`)
-    clearModal()
+    if(inputNombre.value !="" && inputEmail.value!="") {
+        let contacto = {
+            nombre: inputNombre.value,
+            email: inputEmail.value,
+            telefono: inputTelefono.value,
+            mensaje: inputMensaje.value
+        }
+        alert(`Gracias por tu contacto, ${contacto.nombre}. Me comunicaré pronto!`)
+        console.log(contacto)
+        clearModal()
+    } else {
+        errorMsg()
+    }
 }
 
 function clearModal() {
-    inputNombre.value = ''
-    inputEmail.value = ''
-    inputTelefono.value = ''
-    inputMensaje.value = ''
+    inputNombre.value = ""
+    inputEmail.value = ""
+    inputTelefono.value = ""
+    inputMensaje.value = ""
+}
+
+function errorMsg() {
+    alert(`Ingresa tu informacion de contacto!`)
 }
