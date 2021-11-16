@@ -48,7 +48,6 @@ function toggleModal() {
 }
 
 function sendContact() {
-
     if(inputNombre.value !="" && inputEmail.value!="") {
         let contacto = {
             nombre: inputNombre.value,
