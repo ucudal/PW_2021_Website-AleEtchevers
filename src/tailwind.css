@@ -1,3 +1,110 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#time-line:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 1px;
+  background-color: #b2b2b2;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+#time-line .time-line-points {
+  left: 50%;
+  margin-left: -6px;
+  z-index: 100;
+}
+
+a:hover{
+  color: lightskyblue;
+}
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
+
+#header_img {
+  max-width: 100%;
+  width: 100%;
+  height: 24rem;
+}
+
+@media only screen and (min-width: 2408px) {
+  #menu {
+    left: 30rem;
+  }
+
+  #principal_container {
+    font-size: 20px;
+  }
+
+  #header_container {
+    margin: auto;
+  }
+
+  #header_container #header_img {
+    left: 0px;
+  }
+}
+
+@media only screen and (max-width: 2409px) and (min-width: 1524px) {
+  #menu {
+    left: 9rem;
+  }
+
+  #principal_container {
+    font-size: 20px;
+  }
+
+  #header_container {
+    margin: auto;
+  }
+
+  #header_container #header_img {
+    left: 0px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+  #menu {
+    left: 2rem;
+  }
+
+  #title_header {
+    margin: 0px 0px 0px 235px;
+  }
+
+  #header_container #header_img {
+    height: 400px;
+  }
+}
+
+@media (min-width:700px) and (max-width: 1023px) {
+  #menu {
+    left: 1.3rem;
+  }
+
+  #title_header {
+    margin-right: 0px;
+    height: 150px;
+  }
+
+  #facultad_name {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 765px) {
+  body {
+    visibility: hidden;
+  }
+}

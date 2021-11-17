@@ -48,7 +48,8 @@ function toggleModal() {
 }
 
 function sendContact() {
-    if(inputNombre.value !="" && inputEmail.value!="") {
+    inputRemoveWarning(inputNombre, inputEmail)
+    if(inputNombre.value !="" && inputEmail.value !="") {
         let contacto = {
             nombre: inputNombre.value,
             email: inputEmail.value,
@@ -59,7 +60,8 @@ function sendContact() {
         console.log(contacto)
         clearModal()
     } else {
-        errorMsg()
+        inputRemoveWarning(inputNombre, inputEmail)
+        errorMsg(inputNombre, inputEmail)
     }
 }
 
@@ -70,6 +72,27 @@ function clearModal() {
     inputMensaje.value = ""
 }
 
-function errorMsg() {
+function errorMsg(name, email) {
+    if(name.value ==""){
+        inputAddWarning(name)
+    } 
+
+    if (email.value =="") {
+        inputAddWarning(email)
+    }
     alert(`Ingresa tu informacion de contacto!`)
+}
+
+function inputAddWarning(input) {
+    input.classList.add('border-red-500')
+}
+
+function inputRemoveWarning(name, email) {
+    if (name.classList.contains('border-red-500')) {
+        name.classList.remove('border-red-500')
+    }
+
+    if (email.classList.contains('border-red-500')) {
+        email.classList.remove('border-red-500')
+    }
 }

@@ -6,27 +6,28 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="style.css" rel="stylesheet">
-  <link href="stylesheet.css" rel="stylesheet">
   <title> CV | Alejandra Etchevers </title>
 </head>
 
 <body class="font-sans antialiased w-full bg-gray-50">
-  <div class="relative pb-10">
-    <img src="./img/header_background.jpg" class="absolute"/>
-  </div>
-  <div class="pt-32 pb-5 relative" id="top">
-    <div class="flex flex-col sm:flex-row ml-96 pl-8 mr-36">
-      <h1 class="font-bold text-5xl text-center text-gray-100">María Alejandra Etchevers Llavayol<br>
-        <span class="text-4xl font-thin leading-none">Estudiante de Ingeniería y Tecnologías<br>Universidad Catolica del
-          Uruguay
-        </span>
-      </h1>
+  <div class="container" id="header_container">
+    <div class="pb-10 m-0 w-100">
+      <img src="./img/header_background.jpg" class="absolute" id="header_img"/>
+    </div>
+    <div class="pt-32 pb-5 relative" id="top">
+      <div class="flex flex-col sm:flex-row ml-96 pl-8 mr-36" id="title_header">
+        <h1 class="font-bold text-5xl text-center text-gray-100">María Alejandra Etchevers Llavayol<br>
+          <span class="text-4xl font-thin leading-none" id="facultad_name">Estudiante de Ingeniería y Tecnologías<br>Universidad Catolica del
+            Uruguay
+          </span>
+        </h1>
+      </div>
     </div>
   </div>
-
-  <div class="container mx-auto max-w-screen-xl">
+  
+  <div class="container mx-auto max-w-screen-xl" id="principal_container">
     <div class="flex flex-col sm:flex-row text-justify">
-      <div class="shadow-2xl sm:max-w-sm pb-20 py-4 px-4 rounded-full fixed text-center bg-white top-20 break-words">
+      <div class="shadow-2xl sm:max-w-sm pb-20 py-4 px-4 rounded-full fixed text-center bg-white top-20 break-words" id="menu">
         <div class="px-2 mb-7">
           <img src="./img/profile.png" class="rounded-full w-60 mx-auto" />
         </div>
@@ -427,7 +428,7 @@
                           Nombre y Apellido / Empresa
                         </label>
                         <input
-                          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+                          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                           id="grid-nombre" type="text">
                       </div>
                     </div>
@@ -437,7 +438,7 @@
                           E-mail
                         </label>
                         <input
-                          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                           id="grid-email" type="email">
                       </div>
                     </div>
@@ -447,7 +448,7 @@
                           Telefono
                         </label>
                         <input
-                          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                           id="grid-telefono" type="number">
                       </div>
                     </div>
@@ -457,7 +458,7 @@
                           Mensaje
                         </label>
                         <textarea
-                          class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
+                          class=" no-resize appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 h-48 resize-none"
                           id="grid-mensaje"></textarea>
                       </div>
                     </div>
