@@ -1,0 +1,28 @@
+#time-line:before {
+  top: 0;
+  bottom: 0;
+  position: absolute;
+  content: " ";
+  width: 1px;
+  background-color: #b2b2b2;
+  left: 50%;
+  margin-left: -1.5px;
+}
+
+#time-line .time-line-points {
+  left: 50%;
+  margin-left: -6px;
+  z-index: 100;
+}
+
+a:hover{
+  color: lightskyblue;
+}
+
+.modal {
+  transition: opacity 0.25s ease;
+}
+body.modal-active {
+  overflow-x: hidden;
+  overflow-y: visible !important;
+}
