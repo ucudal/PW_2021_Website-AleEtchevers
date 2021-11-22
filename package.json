@@ -9,7 +9,8 @@
     "tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./docs/style.css",
     "tailwind:watch": "npm run tailwind -- --watch",
     "uglify": "npx uglify-js src/script.js -o docs/script.min.js",
-    "build": "tsc src/script.ts"
+    "build": "postcss src/tailwind.css -o public/css/styles.css",
+    "build-api": "tsc docs/callApi.ts"
   },
   "repository": {
     "type": "git",
@@ -22,8 +23,14 @@
   },
   "homepage": "https://github.com/ucudal/PW_2021_Website-AleEtchevers#readme",
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
     "@tailwindcss/typography": "^0.4.1",
+    "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.5",
+    "tsc": "^2.0.3",
+    "typescript": "^4.4.4",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.2",
     "tailwindcss": "^2.2.19"
   }
 }
