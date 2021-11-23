@@ -176,12 +176,12 @@ function createLaboralExperienceSection(experiencias) {
       section3.appendChild(divHerramientas)
 
       var herramientas = document.createElement("div")
-      herramientas.classList.add("lg:inline-block", "lg:w-8/12", "w-full")
+      herramientas.classList.add("lg:inline-block", "lg:w-11/12", "w-full", "text-center")
       
       let lista_herramientas = ['Rails', 'GitHub', 'Ruby', 'Bootstrap', 'Circle CI', 'Clickup|Trello', 'HTML|CSS']
       for (var i = 0; i < lista_herramientas.length; i++) {
         var span = document.createElement("span")
-        span.classList.add('rounded-xl', 'bg-blue-300', 'text-gray-500', 'px-3')
+        span.classList.add('rounded-xl', 'bg-blue-300', 'text-gray-500', 'px-3', 'mx-2')
         span.textContent = lista_herramientas[i]
         herramientas.appendChild(span)
       }

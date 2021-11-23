@@ -104,7 +104,47 @@ body.modal-active {
 }
 
 @media (max-width: 765px) {
-  body {
+  #menu {
+    visibility: hidden;
+  }
+
+  #title_header {
+    margin-left: 20px;
+    padding-bottom: 0px;
+  }
+
+  #facultad_name {
+    visibility: hidden;
+  }
+
+  #principal_content {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 680px) {
+  #menu {
+    visibility: hidden;
+  }
+
+  #top {
+    visibility: hidden;
+  }
+
+  #title_header {
+    visibility: hidden;
+  }
+
+  #facultad_name {
+    visibility: hidden;
+  }
+
+  #principal_content {
+    margin-left: 20px;
+    padding-bottom: 0px;
+  }
+
+  #header_container #header_img {
     visibility: hidden;
   }
 }
