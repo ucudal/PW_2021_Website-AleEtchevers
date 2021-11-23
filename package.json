@@ -10,7 +10,7 @@
     "tailwind:watch": "npm run tailwind -- --watch",
     "uglify": "npx uglify-js src/script.js -o docs/script.min.js",
     "build": "postcss src/tailwind.css -o public/css/styles.css",
-    "build-api": "tsc docs/callApi.ts"
+    "build-api": "tsc src/script.ts"
   },
   "repository": {
     "type": "git",
@@ -27,10 +27,9 @@
     "@tailwindcss/typography": "^0.4.1",
     "autoprefixer": "^10.4.0",
     "browser-sync": "^2.27.5",
-    "tsc": "^2.0.3",
-    "typescript": "^4.4.4",
     "postcss": "^8.3.11",
     "postcss-cli": "^9.0.2",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^2.2.19",
+    "typescript": "^4.5.2"
   }
 }
