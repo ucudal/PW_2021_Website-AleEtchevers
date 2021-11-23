@@ -1,6 +1,7 @@
 var btnOpenModal = document.querySelectorAll('.modal-open')
 var btnCloseModal = document.querySelectorAll('.modal-close')
 var experienceBlock = document.getElementById('experiencia-laboral')
+var contactForm = document.getElementById("contact-form-id");
 const btnSubmit = document.getElementById('contacto_submit')
 const overlay = document.querySelector('.modal-overlay')
 const modal = document.querySelector('.modal')
@@ -15,8 +16,7 @@ setup()
 function setup(modal) {
   openModal()
   closeModal()
-  btnSubmit.onclick = sendContact
-
+  
   window.onclick = function (event) {
     if (event.target == modal) {
         closeModal()
@@ -49,23 +49,48 @@ function toggleModal() {
 }
 
 function sendContact() {
-  inputRemoveWarning(inputNombre, inputEmail)
-  if(inputNombre.value !="" && inputEmail.value !="") {
-    let contacto = {
-        nombre: inputNombre.value,
-        email: inputEmail.value,
-        telefono: inputTelefono.value,
-        mensaje: inputMensaje.value
-    }
-    alert(`Gracias por tu contacto, ${contacto.nombre}. Me comunicaré pronto!`)
-    console.log(contacto)
-    window.localStorage.setItem(`${contacto.email}`, JSON.stringify(contacto))
-    clearModal()
-  } else {
-    inputRemoveWarning(inputNombre, inputEmail)
-    errorMsg(inputNombre, inputEmail)
+  inputRemoveWarning(inputNombre)
+  var contacto = {
+      nombreContacto: inputNombre.value,
+      email: inputEmail.value,
+      telefono: inputTelefono.value,
+      mensaje: inputMensaje.value
   }
+  return contacto
 }
+
+const submitForm = (event) => {
+  event.preventDefault()
+  let contacto = sendContact()
+
+  console.log(JSON.stringify(contacto))
+  fetch("https://pw2021-apinode-aleetchevers.alejandraetchev.repl.co/enviar-formulario", {
+    method: "POST",
+    body: JSON.stringify(contacto),
+    headers : { 
+      'Content-Type': 'application/json'
+     }
+    })
+    .then(function(res) {
+      if (res.status === 400) {
+        res.text().then(function(data) {  
+          alert(data)
+          inputAddWarning(inputNombre)
+        })
+      }
+      else if (res.status === 200) {
+        res.text().then(function(data) {  
+          alert(data)
+        })
+        clearModal()
+      } 
+    })
+    .catch(function (error) {
+        console.log(error)
+    })
+  window.localStorage.setItem(`${contacto.email}`, JSON.stringify(contacto))
+}
+contactForm.addEventListener("submit", submitForm);
 
 function clearModal() {
   inputNombre.value = ""
@@ -74,28 +99,13 @@ function clearModal() {
   inputMensaje.value = ""
 }
 
-function errorMsg(name, email) {
-  if(name.value == ""){
-      inputAddWarning(name)
-  } 
-
-  if (email.value == "") {
-      inputAddWarning(email)
-  }
-  alert(`Ingresa tu informacion de contacto!`)
-}
-
 function inputAddWarning(input) {
   input.classList.add('border-red-500')
 }
 
-function inputRemoveWarning(name, email) {
+function inputRemoveWarning(name) {
   if (name.classList.contains('border-red-500')) {
       name.classList.remove('border-red-500')
-  }
-
-  if (email.classList.contains('border-red-500')) {
-      email.classList.remove('border-red-500')
   }
 }
 
